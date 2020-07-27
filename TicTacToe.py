@@ -78,9 +78,10 @@ while(len(nums)!=0):
             print("-----------")
             print("Congratulations you won the Game!!")
             break
-        c=random.choice(nums)
-        board[c]=cmp_choice
-        nums.remove(c)
+        if len(nums)!=0:
+            c=random.choice(nums)
+            board[c]=cmp_choice
+            nums.remove(c)
         if(winner(board,cmp_choice)==True):
             print("-----------")
             print("Computer won the game!!")
@@ -94,13 +95,14 @@ while(len(nums)!=0):
             print("-----------")
             print("Computer won the game!!")
             break
-        print("what is your move?(0-8)")
-        p=int(input())
-        if p in nums:
-            nums.remove(p)
-            board[p]=ply_choice
-        else:
-            print("Oops! That choice is already selected..You lost one Choice")
+        if len(nums)!=0: 
+            print("what is your move?(0-8)")
+            p=int(input())
+            if p in nums:
+                nums.remove(p)
+                board[p]=ply_choice
+            else:
+                print("Oops! That choice is already selected..You lost one Choice")
         if(winner(board,ply_choice)==True):
             print("-----------")
             print("Congratulations you won the Game!!")
