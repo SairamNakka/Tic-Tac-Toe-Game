@@ -82,6 +82,9 @@ while(len(nums)!=0):
             c=random.choice(nums)
             board[c]=cmp_choice
             nums.remove(c)
+        else:
+            print("Oops! Ran out of guesses..")
+            break    
         if(winner(board,cmp_choice)==True):
             print("-----------")
             print("Computer won the game!!")
@@ -103,6 +106,9 @@ while(len(nums)!=0):
                 board[p]=ply_choice
             else:
                 print("Oops! That choice is already selected..You lost one Choice")
+        else:
+            print("Oops! Ran out of guesses..")
+            break        
         if(winner(board,ply_choice)==True):
             print("-----------")
             print("Congratulations you won the Game!!")
@@ -110,5 +116,5 @@ while(len(nums)!=0):
             
             
     table(board)
-time.sleep(2)    
+time.sleep(1)    
 table(board)
